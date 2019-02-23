@@ -13,9 +13,13 @@
 
             return function (amount) {
 
-                return amount * tax / 100;
+                return amount + amount * tax / 100;
             }
         }
+
+        var cal = taxCalculator(20);
+        console.log(cal(100000));
+
     </script>
 
 </body>
