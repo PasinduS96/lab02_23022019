@@ -23,7 +23,8 @@
             vehicleName :'Nissan',
             printVehicleNameInner: function () {
 
-                //console.log(this.vehicleName);
+                console.log(this.vehicleName);
+
                 return function() {
 
                     console.log(this.vehicleName);
@@ -35,7 +36,8 @@
         var execute = Vehicle.printVehicleNameInner();
         execute();
 
-        execute.call(Vehicle);
+        var f1 = execute.call(Vehicle);
+        console.log(f1);
 
         var execute = Vehicle.printVehicleNameInner().bind(Vehicle);
         execute();
