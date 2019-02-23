@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 03</title>
+</head>
+<body>
+
+    <script>
+
+        function getUsers(){
+
+            return fetch('https://api.github.com/users')
+            .then(response => response.json());
+        }
+
+        function printUsers() {
+
+            getUsers().then(users => console.log(users));
+
+        }
+
+        printUsers();
+
+    </script>
+</body>
+</html>
