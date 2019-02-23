@@ -24,7 +24,7 @@
             printVehicleNameInner: function () {
 
                 //console.log(this.vehicleName);
-                return function () {
+                return function() {
 
                     console.log(this.vehicleName);
                 }
@@ -32,7 +32,13 @@
 
         }
 
-        Vehicle.exe
+        var execute = Vehicle.printVehicleNameInner();
+        execute();
+
+        execute.call(Vehicle);
+
+        var execute = Vehicle.printVehicleNameInner().bind(Vehicle);
+        execute();
 
 
 
